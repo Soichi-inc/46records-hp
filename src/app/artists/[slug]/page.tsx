@@ -156,10 +156,20 @@ export default async function ArtistDetailPage({ params }: PageProps) {
                   href={`/news/${item.slug}`}
                   className="group block"
                 >
-                  <div className="w-full aspect-[16/10] bg-sub rounded-sm mb-4 overflow-hidden">
-                    <div className="w-full h-full group-hover:scale-105 transition-transform duration-500 flex items-center justify-center text-black/10 text-xs">
-                      THUMBNAIL
-                    </div>
+                  <div className="relative w-full aspect-[16/10] bg-sub rounded-sm mb-4 overflow-hidden">
+                    {item.thumbnail?.url ? (
+                      <Image
+                        src={item.thumbnail.url}
+                        alt={item.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    ) : (
+                      <div className="w-full h-full group-hover:scale-105 transition-transform duration-500 flex items-center justify-center text-black/10 text-xs">
+                        THUMBNAIL
+                      </div>
+                    )}
                   </div>
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-[10px] tracking-widest text-accent">

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getNewsDetail, getNewsList } from "@/lib/microcms";
 import type { Metadata } from "next";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -78,8 +79,21 @@ export default async function NewsDetailPage({ params }: PageProps) {
 
         {/* Thumbnail */}
         <ScrollReveal className="mb-14">
-          <div className="w-full aspect-[16/9] bg-sub rounded-sm flex items-center justify-center text-black/10">
-            THUMBNAIL
+          <div className="relative w-full aspect-[16/9] bg-sub rounded-sm overflow-hidden">
+            {news.thumbnail?.url ? (
+              <Image
+                src={news.thumbnail.url}
+                alt={news.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-black/10">
+                THUMBNAIL
+              </div>
+            )}
           </div>
         </ScrollReveal>
 
@@ -109,10 +123,20 @@ export default async function NewsDetailPage({ params }: PageProps) {
                 href={`/news/${item.slug}`}
                 className="group block"
               >
-                <div className="w-full aspect-[16/10] bg-sub rounded-sm mb-4 overflow-hidden">
-                  <div className="w-full h-full group-hover:scale-105 transition-transform duration-500 flex items-center justify-center text-black/10 text-xs">
-                    THUMBNAIL
-                  </div>
+                <div className="relative w-full aspect-[16/10] bg-sub rounded-sm mb-4 overflow-hidden">
+                  {item.thumbnail?.url ? (
+                    <Image
+                      src={item.thumbnail.url}
+                      alt={item.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  ) : (
+                    <div className="w-full h-full group-hover:scale-105 transition-transform duration-500 flex items-center justify-center text-black/10 text-xs">
+                      THUMBNAIL
+                    </div>
+                  )}
                 </div>
                 <div className="flex items-center gap-3 mb-2">
                   <span className="text-[10px] tracking-widest text-accent">

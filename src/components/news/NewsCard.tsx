@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import type { News } from "@/types";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -25,9 +26,19 @@ export default function NewsCard({ news, index }: NewsCardProps) {
         {/* Thumbnail */}
         <div className="relative w-full aspect-[16/10] bg-sub rounded-sm overflow-hidden mb-4">
           <div className="absolute inset-0 bg-gradient-to-t from-white/40 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          <div className="w-full h-full bg-sub group-hover:scale-105 transition-transform duration-500 flex items-center justify-center text-black/10 text-xs">
-            THUMBNAIL
-          </div>
+          {news.thumbnail?.url ? (
+            <Image
+              src={news.thumbnail.url}
+              alt={news.title}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          ) : (
+            <div className="w-full h-full bg-sub group-hover:scale-105 transition-transform duration-500 flex items-center justify-center text-black/10 text-xs">
+              THUMBNAIL
+            </div>
+          )}
         </div>
 
         {/* Meta */}
