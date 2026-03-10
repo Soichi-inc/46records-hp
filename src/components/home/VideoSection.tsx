@@ -37,7 +37,7 @@ export default function VideoSection() {
       className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden"
     >
       {/* Video placeholder — replace src with actual video */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sub via-black to-sub">
+      <div className="absolute inset-0 bg-gradient-to-br from-sub via-white to-sub">
         {/* Uncomment when video is ready:
         <video
           autoPlay
@@ -54,12 +54,12 @@ export default function VideoSection() {
       {/* Overlay */}
       <div
         ref={overlayRef}
-        className="absolute inset-0 bg-black"
+        className="absolute inset-0 bg-white"
       />
 
       {/* Optional center text */}
       <div className="relative z-10 flex items-center justify-center h-full">
-        <p className="text-white/20 text-lg md:text-xl tracking-[0.5em] uppercase font-light">
+        <p className="text-black/20 text-lg md:text-xl tracking-[0.5em] uppercase font-light">
           46Records
         </p>
       </div>

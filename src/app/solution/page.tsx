@@ -45,19 +45,19 @@ const solutions = [
 
 export default function SolutionPage() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-white">
       {/* Hero */}
       <section className="relative h-[60vh] flex items-end pb-16 px-8 md:px-16 lg:px-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-sub to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-sub to-white" />
         <div className="relative z-10">
           <SplitText
             as="h1"
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-neutral-900"
           >
             SOLUTION
           </SplitText>
           <ScrollReveal delay={0.3}>
-            <p className="mt-6 text-base text-white/50 max-w-lg leading-relaxed">
+            <p className="mt-6 text-base text-black/50 max-w-lg leading-relaxed">
               46Recordsは音楽に関わるすべてのプロセスをサポートします。
             </p>
           </ScrollReveal>
@@ -71,11 +71,11 @@ export default function SolutionPage() {
             <div
               className={`flex flex-col ${
                 index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
-              } gap-10 lg:gap-20 px-8 md:px-16 lg:px-24 py-16 md:py-24 border-t border-white/10`}
+              } gap-10 lg:gap-20 px-8 md:px-16 lg:px-24 py-16 md:py-24 border-t border-black/10`}
             >
               {/* Image placeholder */}
               <div className="lg:w-1/2">
-                <div className="w-full aspect-[4/3] bg-sub rounded-sm flex items-center justify-center text-white/10 text-sm">
+                <div className="w-full aspect-[4/3] bg-sub rounded-sm flex items-center justify-center text-black/10 text-sm">
                   {solution.title}
                 </div>
               </div>
@@ -85,18 +85,18 @@ export default function SolutionPage() {
                 <span className="text-xs text-accent tracking-widest mb-4">
                   {solution.num}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-2">
+                <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 tracking-tight mb-2">
                   {solution.title}
                 </h2>
-                <p className="text-sm text-white/40 mb-6">{solution.titleJa}</p>
-                <p className="text-sm text-white/60 leading-[2] mb-8">
+                <p className="text-sm text-black/40 mb-6">{solution.titleJa}</p>
+                <p className="text-sm text-black/60 leading-[2] mb-8">
                   {solution.description}
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {solution.features.map((feature) => (
                     <span
                       key={feature}
-                      className="text-[11px] text-white/50 px-3 py-1.5 border border-white/10 rounded-full"
+                      className="text-[11px] text-black/50 px-3 py-1.5 border border-black/10 rounded-full"
                     >
                       {feature}
                     </span>
@@ -109,17 +109,17 @@ export default function SolutionPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32 px-8 md:px-16 lg:px-24 border-t border-white/10 text-center">
+      <section className="py-24 md:py-32 px-8 md:px-16 lg:px-24 border-t border-black/10 text-center">
         <ScrollReveal>
-          <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight mb-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-neutral-900 tracking-tight mb-6">
             お気軽にお問い合わせください
           </h2>
-          <p className="text-sm text-white/40 mb-10">
+          <p className="text-sm text-black/40 mb-10">
             サービスに関するご質問・ご相談はこちらから
           </p>
           <Link
             href="/contact"
-            className="inline-block px-10 py-4 bg-white text-black text-sm font-bold tracking-widest hover:bg-accent hover:text-white transition-all duration-300"
+            className="inline-block px-10 py-4 bg-black text-white text-sm font-bold tracking-widest hover:bg-accent hover:text-white transition-all duration-300"
           >
             CONTACT US
           </Link>

@@ -92,13 +92,13 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex flex-col justify-center py-32 md:py-40 px-8 md:px-16 lg:px-24 bg-black"
+      className="relative min-h-screen flex flex-col justify-center py-32 md:py-40 px-8 md:px-16 lg:px-24 bg-white"
     >
       {/* Large headline */}
       <div ref={linesRef} className="mb-16 md:mb-20">
         {headlineLines.map((line, i) => (
           <div key={i} className="overflow-hidden">
-            <h2 className="text-4xl md:text-6xl lg:text-[5.5rem] font-bold leading-[1.15] tracking-tight text-white">
+            <h2 className="text-4xl md:text-6xl lg:text-[5.5rem] font-bold leading-[1.15] tracking-tight text-neutral-900">
               {line}
             </h2>
           </div>
@@ -107,7 +107,7 @@ export default function AboutSection() {
 
       {/* Japanese description */}
       <div ref={descRef} className="max-w-2xl">
-        <p className="text-base md:text-lg text-white/60 leading-[2] tracking-wide">
+        <p className="text-base md:text-lg text-black/60 leading-[2] tracking-wide">
           音楽を通じて、アーティストと世界をつなぐ。
           <br />
           46Recordsは、次世代のアーティストを発掘し、
@@ -120,10 +120,10 @@ export default function AboutSection() {
       <div ref={btnRef} className="mt-12">
         <Link
           href="/about"
-          className="group inline-flex items-center gap-4 text-sm tracking-[0.2em] text-white/70 hover:text-white transition-colors duration-300"
+          className="group inline-flex items-center gap-4 text-sm tracking-[0.2em] text-black/70 hover:text-black transition-colors duration-300"
         >
           VIEW MORE
-          <span className="block w-8 h-[1px] bg-white/40 group-hover:w-16 transition-all duration-300 group-hover:bg-white" />
+          <span className="block w-8 h-[1px] bg-black/40 group-hover:w-16 transition-all duration-300 group-hover:bg-black" />
         </Link>
       </div>
     </section>

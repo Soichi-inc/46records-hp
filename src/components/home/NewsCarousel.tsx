@@ -72,7 +72,7 @@ export default function NewsCarousel({ news }: NewsCarouselProps) {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-black py-20 md:py-0 md:h-screen overflow-hidden"
+      className="relative bg-white py-20 md:py-0 md:h-screen overflow-hidden"
     >
       {/* Section title */}
       <div
@@ -80,12 +80,12 @@ export default function NewsCarousel({ news }: NewsCarouselProps) {
         className="px-8 md:px-16 lg:px-24 md:absolute md:top-16 md:left-0 md:z-10 mb-10 md:mb-0"
       >
         <div className="flex items-center gap-6">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900">
             NEWS
           </h2>
           <Link
             href="/news"
-            className="text-xs tracking-[0.2em] text-white/40 hover:text-white transition-colors"
+            className="text-xs tracking-[0.2em] text-black/40 hover:text-black transition-colors"
           >
             VIEW ALL &rarr;
           </Link>
@@ -106,10 +106,10 @@ export default function NewsCarousel({ news }: NewsCarouselProps) {
           >
             {/* Thumbnail */}
             <div className="relative w-full aspect-[16/10] bg-sub rounded-sm overflow-hidden mb-4">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/40 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="w-full h-full bg-sub group-hover:scale-105 transition-transform duration-500">
                 {/* Replace with next/image when actual images are available */}
-                <div className="w-full h-full flex items-center justify-center text-white/10 text-sm">
+                <div className="w-full h-full flex items-center justify-center text-black/10 text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </div>
               </div>
@@ -120,13 +120,13 @@ export default function NewsCarousel({ news }: NewsCarouselProps) {
               <span className="text-[10px] tracking-widest text-accent font-medium">
                 {item.category}
               </span>
-              <span className="text-[10px] text-white/30">
+              <span className="text-[10px] text-black/30">
                 {formatDate(item.publishedAt)}
               </span>
             </div>
 
             {/* Title */}
-            <h3 className="text-sm md:text-base text-white/80 group-hover:text-white transition-colors leading-relaxed line-clamp-2">
+            <h3 className="text-sm md:text-base text-black/80 group-hover:text-black transition-colors leading-relaxed line-clamp-2">
               {item.title}
             </h3>
           </Link>

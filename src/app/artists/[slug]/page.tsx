@@ -42,19 +42,19 @@ export default async function ArtistDetailPage({ params }: PageProps) {
   const relatedNews = await getNewsList({ limit: 3 });
 
   return (
-    <div className="min-h-screen bg-black pt-32 pb-20">
+    <div className="min-h-screen bg-white pt-32 pb-20">
       {/* Breadcrumb */}
       <ScrollReveal className="px-8 md:px-16 lg:px-24 mb-10">
-        <nav className="flex items-center gap-2 text-xs text-white/40">
-          <Link href="/" className="hover:text-white transition-colors">
+        <nav className="flex items-center gap-2 text-xs text-black/40">
+          <Link href="/" className="hover:text-black transition-colors">
             TOP
           </Link>
           <span>/</span>
-          <Link href="/artists" className="hover:text-white transition-colors">
+          <Link href="/artists" className="hover:text-black transition-colors">
             ARTISTS
           </Link>
           <span>/</span>
-          <span className="text-white/60">{artist.name}</span>
+          <span className="text-black/60">{artist.name}</span>
         </nav>
       </ScrollReveal>
 
@@ -62,7 +62,7 @@ export default async function ArtistDetailPage({ params }: PageProps) {
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 px-8 md:px-16 lg:px-24">
         {/* Photo */}
         <ScrollReveal className="lg:w-1/2">
-          <div className="w-full aspect-[3/4] bg-sub rounded-sm overflow-hidden flex items-center justify-center text-white/10">
+          <div className="w-full aspect-[3/4] bg-sub rounded-sm overflow-hidden flex items-center justify-center text-black/10">
             PROFILE PHOTO
           </div>
         </ScrollReveal>
@@ -71,13 +71,13 @@ export default async function ArtistDetailPage({ params }: PageProps) {
         <div className="lg:w-1/2 lg:pt-8">
           <SplitText
             as="h1"
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-2"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 tracking-tight mb-2"
           >
             {artist.name}
           </SplitText>
 
           <ScrollReveal delay={0.2}>
-            <p className="text-sm text-white/40 tracking-wider mb-2">
+            <p className="text-sm text-black/40 tracking-wider mb-2">
               {artist.nameEn}
             </p>
           </ScrollReveal>
@@ -94,7 +94,7 @@ export default async function ArtistDetailPage({ params }: PageProps) {
           {artist.bio && (
             <ScrollReveal delay={0.4}>
               <div
-                className="text-sm text-white/60 leading-[2] mb-10
+                className="text-sm text-black/60 leading-[2] mb-10
                   [&>p]:mb-4"
                 dangerouslySetInnerHTML={{ __html: artist.bio }}
               />
@@ -111,7 +111,7 @@ export default async function ArtistDetailPage({ params }: PageProps) {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-10 h-10 border border-white/20 rounded-full text-[10px] text-white/60 hover:text-white hover:border-white transition-all duration-300"
+                    className="flex items-center justify-center w-10 h-10 border border-black/20 rounded-full text-[10px] text-black/60 hover:text-black hover:border-black transition-all duration-300"
                   >
                     {socialIcons[link.platform] || link.platform.slice(0, 2).toUpperCase()}
                   </a>
@@ -123,7 +123,7 @@ export default async function ArtistDetailPage({ params }: PageProps) {
           <ScrollReveal delay={0.6}>
             <Link
               href="/artists"
-              className="inline-flex items-center gap-3 text-sm text-white/40 hover:text-white transition-colors"
+              className="inline-flex items-center gap-3 text-sm text-black/40 hover:text-black transition-colors"
             >
               &larr; Back to Artists
             </Link>
@@ -133,8 +133,8 @@ export default async function ArtistDetailPage({ params }: PageProps) {
 
       {/* Related News */}
       {relatedNews.contents.length > 0 && (
-        <section className="mt-20 pt-16 px-8 md:px-16 lg:px-24 border-t border-white/10">
-          <h2 className="text-2xl font-bold text-white mb-10 tracking-tight">
+        <section className="mt-20 pt-16 px-8 md:px-16 lg:px-24 border-t border-black/10">
+          <h2 className="text-2xl font-bold text-neutral-900 mb-10 tracking-tight">
             Related News
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -152,7 +152,7 @@ export default async function ArtistDetailPage({ params }: PageProps) {
                   className="group block"
                 >
                   <div className="w-full aspect-[16/10] bg-sub rounded-sm mb-4 overflow-hidden">
-                    <div className="w-full h-full group-hover:scale-105 transition-transform duration-500 flex items-center justify-center text-white/10 text-xs">
+                    <div className="w-full h-full group-hover:scale-105 transition-transform duration-500 flex items-center justify-center text-black/10 text-xs">
                       THUMBNAIL
                     </div>
                   </div>
@@ -160,9 +160,9 @@ export default async function ArtistDetailPage({ params }: PageProps) {
                     <span className="text-[10px] tracking-widest text-accent">
                       {item.category}
                     </span>
-                    <span className="text-[10px] text-white/30">{dateStr}</span>
+                    <span className="text-[10px] text-black/30">{dateStr}</span>
                   </div>
-                  <h3 className="text-sm text-white/70 group-hover:text-white transition-colors line-clamp-2">
+                  <h3 className="text-sm text-black/70 group-hover:text-black transition-colors line-clamp-2">
                     {item.title}
                   </h3>
                 </Link>

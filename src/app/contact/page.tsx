@@ -55,17 +55,17 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black pt-32 pb-20 px-8 md:px-16 lg:px-24">
+    <div className="min-h-screen bg-white pt-32 pb-20 px-8 md:px-16 lg:px-24">
       {/* Page Title */}
       <div className="mb-16">
         <SplitText
           as="h1"
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-neutral-900"
         >
           CONTACT
         </SplitText>
         <ScrollReveal delay={0.2}>
-          <p className="mt-6 text-sm text-white/40 max-w-lg leading-relaxed">
+          <p className="mt-6 text-sm text-black/40 max-w-lg leading-relaxed">
             お問い合わせは下記フォームよりお送りください。
             <br />
             内容を確認の上、折り返しご連絡いたします。
@@ -76,10 +76,10 @@ export default function ContactPage() {
       {isSubmitted ? (
         <ScrollReveal>
           <div className="max-w-2xl py-20">
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-2xl font-bold text-neutral-900 mb-4">
               送信完了
             </h2>
-            <p className="text-sm text-white/60 leading-relaxed">
+            <p className="text-sm text-black/60 leading-relaxed">
               お問い合わせいただきありがとうございます。
               <br />
               内容を確認の上、担当者より折り返しご連絡いたします。
@@ -94,12 +94,12 @@ export default function ContactPage() {
           >
             {/* Name */}
             <div>
-              <label className="block text-xs text-white/40 tracking-widest uppercase mb-3">
+              <label className="block text-xs text-black/40 tracking-widest uppercase mb-3">
                 お名前 <span className="text-accent">*</span>
               </label>
               <input
                 {...register("name", { required: "お名前を入力してください" })}
-                className="w-full bg-transparent border-b border-white/20 focus:border-white py-3 text-sm text-white outline-none transition-colors placeholder:text-white/20"
+                className="w-full bg-transparent border-b border-black/20 focus:border-black py-3 text-sm text-neutral-900 outline-none transition-colors placeholder:text-black/20"
                 placeholder="山田 太郎"
               />
               {errors.name && (
@@ -109,7 +109,7 @@ export default function ContactPage() {
 
             {/* Email */}
             <div>
-              <label className="block text-xs text-white/40 tracking-widest uppercase mb-3">
+              <label className="block text-xs text-black/40 tracking-widest uppercase mb-3">
                 メールアドレス <span className="text-accent">*</span>
               </label>
               <input
@@ -121,7 +121,7 @@ export default function ContactPage() {
                   },
                 })}
                 type="email"
-                className="w-full bg-transparent border-b border-white/20 focus:border-white py-3 text-sm text-white outline-none transition-colors placeholder:text-white/20"
+                className="w-full bg-transparent border-b border-black/20 focus:border-black py-3 text-sm text-neutral-900 outline-none transition-colors placeholder:text-black/20"
                 placeholder="example@email.com"
               />
               {errors.email && (
@@ -131,33 +131,33 @@ export default function ContactPage() {
 
             {/* Company */}
             <div>
-              <label className="block text-xs text-white/40 tracking-widest uppercase mb-3">
+              <label className="block text-xs text-black/40 tracking-widest uppercase mb-3">
                 会社名 / 組織名
               </label>
               <input
                 {...register("company")}
-                className="w-full bg-transparent border-b border-white/20 focus:border-white py-3 text-sm text-white outline-none transition-colors placeholder:text-white/20"
+                className="w-full bg-transparent border-b border-black/20 focus:border-black py-3 text-sm text-neutral-900 outline-none transition-colors placeholder:text-black/20"
                 placeholder="株式会社○○"
               />
             </div>
 
             {/* Inquiry Type */}
             <div>
-              <label className="block text-xs text-white/40 tracking-widest uppercase mb-3">
+              <label className="block text-xs text-black/40 tracking-widest uppercase mb-3">
                 お問い合わせ種別 <span className="text-accent">*</span>
               </label>
               <select
                 {...register("type", {
                   required: "お問い合わせ種別を選択してください",
                 })}
-                className="w-full bg-transparent border-b border-white/20 focus:border-white py-3 text-sm text-white outline-none transition-colors appearance-none cursor-pointer"
+                className="w-full bg-transparent border-b border-black/20 focus:border-black py-3 text-sm text-neutral-900 outline-none transition-colors appearance-none cursor-pointer"
                 defaultValue=""
               >
-                <option value="" disabled className="bg-black">
+                <option value="" disabled className="bg-white">
                   選択してください
                 </option>
                 {inquiryTypes.map((type) => (
-                  <option key={type} value={type} className="bg-black">
+                  <option key={type} value={type} className="bg-white">
                     {type}
                   </option>
                 ))}
@@ -169,7 +169,7 @@ export default function ContactPage() {
 
             {/* Message */}
             <div>
-              <label className="block text-xs text-white/40 tracking-widest uppercase mb-3">
+              <label className="block text-xs text-black/40 tracking-widest uppercase mb-3">
                 お問い合わせ内容 <span className="text-accent">*</span>
               </label>
               <textarea
@@ -177,7 +177,7 @@ export default function ContactPage() {
                   required: "お問い合わせ内容を入力してください",
                 })}
                 rows={6}
-                className="w-full bg-transparent border-b border-white/20 focus:border-white py-3 text-sm text-white outline-none transition-colors resize-none placeholder:text-white/20"
+                className="w-full bg-transparent border-b border-black/20 focus:border-black py-3 text-sm text-neutral-900 outline-none transition-colors resize-none placeholder:text-black/20"
                 placeholder="お問い合わせ内容をご記入ください"
               />
               {errors.message && (
@@ -192,7 +192,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-10 py-4 bg-white text-black text-sm font-bold tracking-widest hover:bg-accent hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-10 py-4 bg-black text-white text-sm font-bold tracking-widest hover:bg-accent hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "SENDING..." : "SEND"}
               </button>

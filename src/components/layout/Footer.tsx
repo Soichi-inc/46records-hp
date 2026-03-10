@@ -48,18 +48,18 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer ref={footerRef} className="bg-black border-t border-white/10">
+    <footer ref={footerRef} className="bg-white border-t border-black/10">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {/* Logo */}
           <div>
             <Link
               href="/"
-              className="text-2xl font-bold tracking-widest text-white hover:opacity-80 transition-opacity"
+              className="text-2xl font-bold tracking-widest text-neutral-900 hover:opacity-80 transition-opacity"
             >
               46Records
             </Link>
-            <p className="mt-4 text-sm text-white/40 leading-relaxed">
+            <p className="mt-4 text-sm text-black/40 leading-relaxed">
               音楽を通じて、
               <br />
               アーティストと世界をつなぐ。
@@ -68,7 +68,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <p className="text-xs tracking-widest uppercase text-white/40 mb-4">
+            <p className="text-xs tracking-widest uppercase text-black/40 mb-4">
               Navigation
             </p>
             <nav className="flex flex-col gap-2">
@@ -76,7 +76,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-white/60 hover:text-white transition-colors"
+                  className="text-sm text-black/60 hover:text-black transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -86,7 +86,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <p className="text-xs tracking-widest uppercase text-white/40 mb-4">
+            <p className="text-xs tracking-widest uppercase text-black/40 mb-4">
               Social
             </p>
             <div className="flex flex-col gap-2">
@@ -96,7 +96,7 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/60 hover:text-white transition-colors"
+                  className="text-sm text-black/60 hover:text-black transition-colors"
                 >
                   {link.label}
                 </a>
@@ -106,13 +106,13 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-white/30">
+        <div className="mt-16 pt-8 border-t border-black/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-black/30">
             &copy; 2026 46Records. ALL RIGHTS RESERVED.
           </p>
           <Link
             href="/contact"
-            className="text-xs text-white/30 hover:text-white transition-colors"
+            className="text-xs text-black/30 hover:text-black transition-colors"
           >
             CONTACT US
           </Link>

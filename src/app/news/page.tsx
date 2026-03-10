@@ -22,12 +22,12 @@ export default async function NewsPage({ searchParams }: PageProps) {
   const newsData = await getNewsList({ limit: 12, category });
 
   return (
-    <div className="min-h-screen bg-black pt-32 pb-20 px-8 md:px-16 lg:px-24">
+    <div className="min-h-screen bg-white pt-32 pb-20 px-8 md:px-16 lg:px-24">
       {/* Page Title */}
       <div className="mb-12">
         <SplitText
           as="h1"
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-neutral-900"
         >
           NEWS
         </SplitText>
@@ -50,7 +50,7 @@ export default async function NewsPage({ searchParams }: PageProps) {
       {/* Empty state */}
       {newsData.contents.length === 0 && (
         <div className="text-center py-20">
-          <p className="text-white/40 text-sm">記事がありません。</p>
+          <p className="text-black/40 text-sm">記事がありません。</p>
         </div>
       )}
     </div>

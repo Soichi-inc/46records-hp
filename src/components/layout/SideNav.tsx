@@ -46,7 +46,7 @@ export default function SideNav() {
           <Link
             key={`${item.label}-${index}`}
             href={item.href}
-            className="text-[10px] tracking-[0.3em] text-white/30 hover:text-white transition-colors duration-300 whitespace-nowrap"
+            className="text-[10px] tracking-[0.3em] text-black/30 hover:text-black transition-colors duration-300 whitespace-nowrap"
             style={{
               writingMode: "vertical-rl",
               textOrientation: "mixed",

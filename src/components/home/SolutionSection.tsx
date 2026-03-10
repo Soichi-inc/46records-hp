@@ -90,16 +90,16 @@ export default function SolutionSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-black py-32 md:py-40 px-8 md:px-16 lg:px-24"
+      className="relative bg-white py-32 md:py-40 px-8 md:px-16 lg:px-24"
     >
       {/* Section header */}
       <div ref={titleRef} className="mb-16 md:mb-20">
         <div className="flex items-center gap-6 mb-6">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900">
             OUR SOLUTION
           </h2>
         </div>
-        <p className="text-base text-white/40 max-w-lg leading-relaxed">
+        <p className="text-base text-black/40 max-w-lg leading-relaxed">
           46Recordsは音楽に関わるすべてのプロセスをサポートします。
         </p>
       </div>
@@ -112,16 +112,16 @@ export default function SolutionSection() {
         {services.map((service) => (
           <div
             key={service.num}
-            className="group p-8 md:p-10 bg-sub rounded-sm border border-white/5 hover:border-white/15 transition-all duration-500"
+            className="group p-8 md:p-10 bg-sub rounded-sm border border-black/5 hover:border-black/15 transition-all duration-500"
           >
             <span className="text-xs text-accent tracking-widest">
               {service.num}
             </span>
-            <h3 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
+            <h3 className="mt-4 text-2xl md:text-3xl font-bold text-neutral-900 tracking-tight">
               {service.title}
             </h3>
-            <p className="mt-1 text-sm text-white/40">{service.titleJa}</p>
-            <p className="mt-4 text-sm text-white/60 leading-relaxed">
+            <p className="mt-1 text-sm text-black/40">{service.titleJa}</p>
+            <p className="mt-4 text-sm text-black/60 leading-relaxed">
               {service.description}
             </p>
           </div>
@@ -132,10 +132,10 @@ export default function SolutionSection() {
       <div className="mt-16 text-center">
         <Link
           href="/solution"
-          className="group inline-flex items-center gap-4 text-sm tracking-[0.2em] text-white/70 hover:text-white transition-colors duration-300"
+          className="group inline-flex items-center gap-4 text-sm tracking-[0.2em] text-black/70 hover:text-black transition-colors duration-300"
         >
           VIEW MORE
-          <span className="block w-8 h-[1px] bg-white/40 group-hover:w-16 transition-all duration-300 group-hover:bg-white" />
+          <span className="block w-8 h-[1px] bg-black/40 group-hover:w-16 transition-all duration-300 group-hover:bg-black" />
         </Link>
       </div>
     </section>

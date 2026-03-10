@@ -33,8 +33,8 @@ export default function CategoryFilter() {
           onClick={() => handleClick(cat.value)}
           className={`relative text-sm tracking-[0.15em] pb-2 transition-colors duration-300 ${
             currentCategory === cat.value
-              ? "text-white"
-              : "text-white/40 hover:text-white/70"
+              ? "text-neutral-900"
+              : "text-black/40 hover:text-black/70"
           }`}
         >
           {cat.label}
