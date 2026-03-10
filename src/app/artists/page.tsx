@@ -13,7 +13,7 @@ export default async function ArtistsPage() {
   const artistsData = await getArtistsList();
 
   return (
-    <div className="min-h-screen bg-white pt-32 pb-20 px-8 md:px-16 lg:px-24">
+    <div className="min-h-screen bg-white pt-44 pb-32 px-8 md:px-16 lg:px-24">
       {/* Page Title */}
       <div className="mb-16">
         <SplitText

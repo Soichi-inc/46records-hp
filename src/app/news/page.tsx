@@ -22,9 +22,9 @@ export default async function NewsPage({ searchParams }: PageProps) {
   const newsData = await getNewsList({ limit: 12, category });
 
   return (
-    <div className="min-h-screen bg-white pt-32 pb-20 px-8 md:px-16 lg:px-24">
+    <div className="min-h-screen bg-white pt-44 pb-32 px-8 md:px-16 lg:px-24">
       {/* Page Title */}
-      <div className="mb-12">
+      <div className="mb-16">
         <SplitText
           as="h1"
           className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-neutral-900"
@@ -34,14 +34,14 @@ export default async function NewsPage({ searchParams }: PageProps) {
       </div>
 
       {/* Category Filter */}
-      <div className="mb-12">
+      <div className="mb-16">
         <Suspense fallback={null}>
           <CategoryFilter />
         </Suspense>
       </div>
 
       {/* News Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
         {newsData.contents.map((news, index) => (
           <NewsCard key={news.id} news={news} index={index} />
         ))}

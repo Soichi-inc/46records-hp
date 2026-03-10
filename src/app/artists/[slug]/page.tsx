@@ -43,7 +43,7 @@ export default async function ArtistDetailPage({ params }: PageProps) {
   const relatedNews = await getNewsList({ limit: 3 });
 
   return (
-    <div className="min-h-screen bg-white pt-32 pb-20">
+    <div className="min-h-screen bg-white pt-44 pb-32">
       {/* Breadcrumb */}
       <ScrollReveal className="px-8 md:px-16 lg:px-24 mb-10">
         <nav className="flex items-center gap-2 text-xs text-black/40">

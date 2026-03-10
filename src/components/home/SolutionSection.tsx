@@ -90,7 +90,7 @@ export default function SolutionSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-white py-40 md:py-52 px-8 md:px-16 lg:px-24"
+      className="relative bg-white pt-40 pb-52 md:pt-52 md:pb-64 px-8 md:px-16 lg:px-24"
     >
       {/* Section header */}
       <div ref={titleRef} className="mb-16 md:mb-20">

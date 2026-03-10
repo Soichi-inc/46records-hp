@@ -21,7 +21,7 @@ export default function ArtistCard({ artist, index }: ArtistCardProps) {
             src={artist.photo.url}
             alt={artist.name}
             fill
-            className="object-cover group-hover:scale-110 transition-transform duration-700"
+            className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
             sizes="(max-width: 768px) 50vw, 25vw"
           />
         </div>

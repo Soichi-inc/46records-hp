@@ -40,9 +40,9 @@ export default async function NewsDetailPage({ params }: PageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-white pt-32 pb-20 px-8 md:px-16 lg:px-24">
+    <div className="min-h-screen bg-white pt-44 pb-32 px-8 md:px-16 lg:px-24">
       {/* Breadcrumb */}
-      <ScrollReveal className="mb-8">
+      <ScrollReveal className="mb-10">
         <nav className="flex items-center gap-2 text-xs text-black/40">
           <Link href="/" className="hover:text-black transition-colors">
             TOP
@@ -59,7 +59,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
       {/* Article */}
       <article className="max-w-3xl">
         {/* Meta */}
-        <ScrollReveal className="flex items-center gap-3 mb-4">
+        <ScrollReveal className="flex items-center gap-3 mb-6">
           <span className="text-[10px] tracking-widest text-accent font-medium">
             {news.category}
           </span>
@@ -71,13 +71,13 @@ export default async function NewsDetailPage({ params }: PageProps) {
         {/* Title */}
         <SplitText
           as="h1"
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 leading-[1.3] tracking-tight mb-10"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 leading-[1.4] tracking-tight mb-12"
         >
           {news.title}
         </SplitText>
 
         {/* Thumbnail */}
-        <ScrollReveal className="mb-12">
+        <ScrollReveal className="mb-14">
           <div className="w-full aspect-[16/9] bg-sub rounded-sm flex items-center justify-center text-black/10">
             THUMBNAIL
           </div>

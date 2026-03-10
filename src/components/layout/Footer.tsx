@@ -13,10 +13,8 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { label: "Instagram", href: "#" },
-  { label: "X", href: "#" },
-  { label: "YouTube", href: "#" },
-  { label: "Spotify", href: "#" },
+  { label: "Instagram", href: "https://www.instagram.com/46records_official" },
+  { label: "YouTube", href: "https://www.youtube.com/@46records_official" },
 ];
 
 export default function Footer() {
