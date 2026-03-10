@@ -25,10 +25,11 @@ export default function ScrollReveal({
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!ref.current) return;
+    const el = ref.current;
+    if (!el) return;
 
     gsap.fromTo(
-      ref.current,
+      el,
       { y, x, opacity: 0 },
       {
         y: 0,
@@ -38,7 +39,7 @@ export default function ScrollReveal({
         delay,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: ref.current,
+          trigger: el,
           start: "top 85%",
           once,
         },
@@ -47,7 +48,7 @@ export default function ScrollReveal({
 
     return () => {
       ScrollTrigger.getAll().forEach((t) => {
-        if (t.trigger === ref.current) t.kill();
+        if (t.trigger === el) t.kill();
       });
     };
   }, [delay, duration, y, x, once]);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 interface SplitTextProps {
@@ -21,9 +21,14 @@ export default function SplitText({
   trigger = true,
 }: SplitTextProps) {
   const containerRef = useRef<HTMLElement>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted || !containerRef.current) return;
 
     const el = containerRef.current;
     const text = children;
@@ -93,13 +98,16 @@ export default function SplitText({
         if (t.trigger === el) t.kill();
       });
     };
-  }, [children, delay, stagger, trigger]);
+  }, [mounted, children, delay, stagger, trigger]);
 
   return (
     <Tag
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ref={containerRef as any}
       className={className}
-    />
+      suppressHydrationWarning
+    >
+      {children}
+    </Tag>
   );
 }
