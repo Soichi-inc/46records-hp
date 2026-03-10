@@ -33,10 +33,9 @@ export interface Artist {
   };
   bio?: string;
   genre?: string;
-  socialLinks?: {
-    platform: string;
-    url: string;
-  }[];
+  Instagram?: string;
+  Twitter?: string;
+  TikTok?: string;
   sortOrder: number;
 }
 

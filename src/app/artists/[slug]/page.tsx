@@ -23,16 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const socialIcons: Record<string, string> = {
-  Instagram: "IG",
-  X: "X",
-  "X (Twitter)": "X",
-  Twitter: "X",
-  Spotify: "SP",
-  YouTube: "YT",
-  TikTok: "TT",
-  SoundCloud: "SC",
-};
+const socialPlatforms = [
+  { key: "Instagram" as const, label: "IG" },
+  { key: "Twitter" as const, label: "X" },
+  { key: "TikTok" as const, label: "TT" },
+];
 
 export default async function ArtistDetailPage({ params }: PageProps) {
   const { slug } = await params;
@@ -110,20 +105,22 @@ export default async function ArtistDetailPage({ params }: PageProps) {
           )}
 
           {/* Social Links */}
-          {artist.socialLinks && artist.socialLinks.length > 0 && (
+          {socialPlatforms.some((p) => artist[p.key]) && (
             <ScrollReveal delay={0.5}>
               <div className="flex gap-4 mb-10">
-                {artist.socialLinks.map((link) => (
-                  <a
-                    key={link.platform}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center w-10 h-10 border border-black/20 rounded-full text-[10px] text-black/60 hover:text-black hover:border-black transition-all duration-300"
-                  >
-                    {socialIcons[link.platform] || link.platform.slice(0, 2).toUpperCase()}
-                  </a>
-                ))}
+                {socialPlatforms.map((p) =>
+                  artist[p.key] ? (
+                    <a
+                      key={p.key}
+                      href={artist[p.key]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-10 h-10 border border-black/20 rounded-full text-[10px] text-black/60 hover:text-black hover:border-black transition-all duration-300"
+                    >
+                      {p.label}
+                    </a>
+                  ) : null
+                )}
               </div>
             </ScrollReveal>
           )}
