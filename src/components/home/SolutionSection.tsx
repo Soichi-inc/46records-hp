@@ -90,7 +90,7 @@ export default function SolutionSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-white py-32 md:py-40 px-8 md:px-16 lg:px-24"
+      className="relative bg-white py-40 md:py-52 px-8 md:px-16 lg:px-24"
     >
       {/* Section header */}
       <div ref={titleRef} className="mb-16 md:mb-20">
@@ -129,7 +129,7 @@ export default function SolutionSection() {
       </div>
 
       {/* CTA */}
-      <div className="mt-16 text-center">
+      <div className="mt-20 md:mt-24 text-center">
         <Link
           href="/solution"
           className="group inline-flex items-center gap-4 text-sm tracking-[0.2em] text-black/70 hover:text-black transition-colors duration-300"

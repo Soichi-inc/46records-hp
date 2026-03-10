@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import type { Artist } from "@/types";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -16,9 +17,13 @@ export default function ArtistCard({ artist, index }: ArtistCardProps) {
         {/* Photo */}
         <div className="relative w-full aspect-square bg-sub rounded-sm overflow-hidden mb-4">
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 z-10" />
-          <div className="w-full h-full bg-sub group-hover:scale-110 transition-transform duration-700 flex items-center justify-center text-black/10 text-xs">
-            PHOTO
-          </div>
+          <Image
+            src={artist.photo.url}
+            alt={artist.name}
+            fill
+            className="object-cover group-hover:scale-110 transition-transform duration-700"
+            sizes="(max-width: 768px) 50vw, 25vw"
+          />
         </div>
 
         {/* Name */}

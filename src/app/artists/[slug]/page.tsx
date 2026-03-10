@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getArtistDetail, getNewsList } from "@/lib/microcms";
 import type { Metadata } from "next";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -62,8 +63,15 @@ export default async function ArtistDetailPage({ params }: PageProps) {
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 px-8 md:px-16 lg:px-24">
         {/* Photo */}
         <ScrollReveal className="lg:w-1/2">
-          <div className="w-full aspect-[3/4] bg-sub rounded-sm overflow-hidden flex items-center justify-center text-black/10">
-            PROFILE PHOTO
+          <div className="relative w-full aspect-[3/4] bg-sub rounded-sm overflow-hidden">
+            <Image
+              src={artist.profilePhoto?.url || artist.photo.url}
+              alt={artist.name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
           </div>
         </ScrollReveal>
 

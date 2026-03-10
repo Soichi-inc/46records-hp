@@ -1,13 +1,17 @@
 import HeroSlider from "@/components/home/HeroSlider";
 import AboutSection from "@/components/home/AboutSection";
 import VideoSection from "@/components/home/VideoSection";
+import ArtistsSection from "@/components/home/ArtistsSection";
 import NewsCarousel from "@/components/home/NewsCarousel";
 import SolutionSection from "@/components/home/SolutionSection";
 import SideNav from "@/components/layout/SideNav";
-import { getNewsList } from "@/lib/microcms";
+import { getNewsList, getArtistsList } from "@/lib/microcms";
 
 export default async function Home() {
-  const newsData = await getNewsList({ limit: 8 });
+  const [newsData, artistsData] = await Promise.all([
+    getNewsList({ limit: 8 }),
+    getArtistsList(),
+  ]);
 
   return (
     <>
@@ -15,6 +19,7 @@ export default async function Home() {
       <HeroSlider />
       <AboutSection />
       <VideoSection />
+      <ArtistsSection artists={artistsData.contents} />
       <NewsCarousel news={newsData.contents} />
       <SolutionSection />
     </>
