@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import type { News } from "@/types";
 
@@ -107,12 +108,19 @@ export default function NewsCarousel({ news }: NewsCarouselProps) {
             {/* Thumbnail */}
             <div className="relative w-full aspect-[16/10] bg-sub rounded-sm overflow-hidden mb-4">
               <div className="absolute inset-0 bg-gradient-to-t from-white/40 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="w-full h-full bg-sub group-hover:scale-105 transition-transform duration-500">
-                {/* Replace with next/image when actual images are available */}
-                <div className="w-full h-full flex items-center justify-center text-black/10 text-sm">
+              {item.thumbnail?.url ? (
+                <Image
+                  src={item.thumbnail.url}
+                  alt={item.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 400px"
+                />
+              ) : (
+                <div className="w-full h-full bg-sub group-hover:scale-105 transition-transform duration-500 flex items-center justify-center text-black/10 text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </div>
-              </div>
+              )}
             </div>
 
             {/* Meta */}
