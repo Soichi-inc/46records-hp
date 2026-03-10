@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 const footerLinks = [
@@ -53,9 +54,15 @@ export default function Footer() {
           <div>
             <Link
               href="/"
-              className="text-2xl font-bold tracking-widest text-neutral-900 hover:opacity-80 transition-opacity"
+              className="inline-block hover:opacity-80 transition-opacity"
             >
-              46Records
+              <Image
+                src="/images/logo/logo-black-transparent.png"
+                alt="46Records"
+                width={353}
+                height={120}
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="mt-4 text-sm text-black/40 leading-relaxed">
               音楽を通じて、

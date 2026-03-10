@@ -56,7 +56,7 @@ export default function VideoSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden"
+      className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black"
     >
       {/* Video background */}
       <div className="absolute inset-0">
