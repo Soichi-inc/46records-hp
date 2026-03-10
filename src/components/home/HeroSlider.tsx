@@ -30,7 +30,6 @@ export default function HeroSlider() {
   const counterRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const logoRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const animateSlide = useCallback((index: number) => {
@@ -99,15 +98,6 @@ export default function HeroSlider() {
       }
     });
 
-    // Logo pulse animation
-    if (logoRef.current) {
-      gsap.fromTo(
-        logoRef.current,
-        { opacity: 0, scale: 0.9 },
-        { opacity: 0.06, scale: 1, duration: 1.5, ease: "power2.out", delay: 0.3 }
-      );
-    }
-
     // Initial text animation
     const tl = gsap.timeline({ delay: 0.5 });
     tl.fromTo(
@@ -174,21 +164,6 @@ export default function HeroSlider() {
 
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-black/40 z-10" />
-
-      {/* Logo watermark in background */}
-      <div
-        ref={logoRef}
-        className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none"
-      >
-        <Image
-          src="/images/logo/logo-outline.png"
-          alt=""
-          width={800}
-          height={800}
-          className="w-[60vw] md:w-[40vw] max-w-[600px] opacity-100 select-none"
-          priority
-        />
-      </div>
 
       {/* Content */}
       <div className="relative z-20 flex flex-col justify-center h-full px-8 md:px-16 lg:px-24">
