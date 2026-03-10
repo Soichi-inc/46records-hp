@@ -8,29 +8,40 @@ export const metadata: Metadata = {
 };
 
 const timeline = [
-  { year: "2024", event: "46Records 設立" },
-  { year: "2025", event: "初のアーティスト契約。楽曲制作開始" },
-  { year: "2026", event: "公式サイトオープン。1stシングルリリース" },
+  { year: "2024", event: "設立。BLUE SOUNDS始動" },
+  { year: "2025", event: "所属アーティスト4名に" },
+  { year: "2026", event: "公式サイトオープン。事務所移転" },
 ];
 
 const companyInfo = [
-  { label: "名称", value: "46Records" },
-  { label: "所在地", value: "東京都" },
+  { label: "名称", value: "46Records合同会社" },
+  { label: "所在地", value: "〒107-0061 東京都港区北青山2-14-4 the ARGYLE aoyama 6F" },
+  { label: "アクセス", value: "東京メトロ銀座線「外苑前駅」3番出口から徒歩2分 / 東京メトロ半蔵門線・千代田線「表参道駅」A3出口から徒歩6分" },
   { label: "設立", value: "2024年" },
-  { label: "代表", value: "—" },
+  { label: "代表", value: "挾間 彬" },
   { label: "事業内容", value: "アーティストマネジメント / 楽曲制作 / イベント企画 / 楽曲配信" },
 ];
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="relative h-[60vh] flex items-end pb-16 px-8 md:px-16 lg:px-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-sub to-white" />
+      {/* Hero with background video */}
+      <section className="relative h-[60vh] flex items-end pb-16 px-8 md:px-16 lg:px-24 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="/images/hero/backstage.jpg"
+        >
+          <source src="/videos/hero-landscape.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10">
           <SplitText
             as="h1"
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-neutral-900"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white drop-shadow-lg"
           >
             {"What's\n46Records"}
           </SplitText>
@@ -97,10 +108,14 @@ export default function AboutPage() {
           {companyInfo.map((item, index) => (
             <ScrollReveal key={item.label} delay={index * 0.08}>
               <div className="flex flex-col md:flex-row gap-2 md:gap-16 py-6 border-b border-black/10">
-                <span className="text-sm text-black/40 min-w-[120px]">
+                <span className="text-sm text-black/40 min-w-[120px] shrink-0">
                   {item.label}
                 </span>
-                <span className="text-sm text-black/80">{item.value}</span>
+                <span className="text-sm text-black/80 whitespace-pre-line">
+                  {item.label === "アクセス"
+                    ? item.value.split(" / ").join("\n")
+                    : item.value}
+                </span>
               </div>
             </ScrollReveal>
           ))}

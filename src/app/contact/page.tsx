@@ -38,18 +38,21 @@ export default function ContactPage() {
   const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
 
-    // Validate with Zod
     const result = contactSchema.safeParse(data);
     if (!result.success) {
       setIsSubmitting(false);
       return;
     }
 
-    // For now, console.log the data (replace with API call later)
-    console.log("Form submitted:", result.data);
-
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const subject = encodeURIComponent(`[${result.data.type}] ${result.data.name}様よりお問い合わせ`);
+    const body = encodeURIComponent(
+      `お名前: ${result.data.name}\n` +
+      `メールアドレス: ${result.data.email}\n` +
+      (result.data.company ? `会社名: ${result.data.company}\n` : "") +
+      `お問い合わせ種別: ${result.data.type}\n\n` +
+      `${result.data.message}`
+    );
+    window.location.href = `mailto:46records.info@gmail.com?subject=${subject}&body=${body}`;
 
     setIsSubmitting(false);
     setIsSubmitted(true);
